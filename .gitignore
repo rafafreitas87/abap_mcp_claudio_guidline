@@ -1,0 +1,15 @@
+# NEVER commit secrets
+secrets/
+*.sec
+
+# Personal, filled-in system connection files (only the _template.env is tracked)
+systems/*.env
+!systems/_template.env
+
+# Local system context / bootstrap output
+system-info.md
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,18 @@
+# >>> Paste this block into your global ~/.claude/CLAUDE.md and fill in <your values> <<<
+
+## ABAP work — always use ARC-1
+
+For **any** ABAP request (classic ABAP or RAP / ABAP Cloud):
+1. Use **ARC-1** (keep it updated) — via the Claude Code plugin `arc-1@arc-1` and/or the `arc1` CLI.
+2. **Connect a target system before** any read or write. My systems: <sid1>, <sid2>, ...
+   - Activate with `Use-Arc1 <sid>` (Windows) / `use_arc1 <sid>` (macOS/Linux) **in the same shell call**
+     as the arc1 command — SAP_* env vars do not persist between calls.
+3. **Consult the ARC-1 skills (`abap-rap-adt`, `arc-1:*`) and any lessons before coding** — don't
+   reinvent patterns. Package-first discovery; understand before changing.
+4. **Writes are gated:** enable `SAP_ALLOW_WRITES=true` (+ `SAP_ALLOWED_PACKAGES`,
+   `SAP_ALLOWED_TRANSPORTS`, `SAP_ALLOW_TRANSPORT_WRITES=true`) inline per write. Confirm the target
+   system + transport with me before the first write. Some systems are read-only — respect that.
+5. **Never** put the SAP password in a plaintext file or a repo. Keychain / encrypted store only.
+
+Connections live in `~/.arc1/` (`systems/<sid>.env` for connection, `secrets/` for the encrypted
+password — never committed). RISE/S4 Cloud systems use `https://<host>` on 443, not `:44300`.
