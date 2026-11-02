@@ -36,6 +36,7 @@ Claude will then:
 | [`templates/arc1env.ps1`](templates/arc1env.ps1) | **Windows** multi-system helper (`Use-Arc1`, `Set-Arc1Secret`, `Get-Arc1Systems`). Password encrypted with DPAPI. |
 | [`templates/arc1env.sh`](templates/arc1env.sh) | **macOS / Linux** equivalent helper. Password kept only in the live shell session. |
 | [`reference/cheatsheet.md`](reference/cheatsheet.md) | Daily commands, the **write-gating** env vars, and the gotchas that waste the most time. |
+| [`reference/analise-funcional-mm-readonly.md`](reference/analise-funcional-mm-readonly.md) | **Read-only quick guide for functional consultants** (PT-BR, MM focus): analyze SAP data with ARC-1, no writes. |
 
 ---
 
